@@ -30,6 +30,26 @@ class Hashtable {
     return element ? element[1] : false
   }
 
+  getKeys(){
+    let keys = []
+    for (let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        this.keyMap[i].forEach(ar => keys.push(ar[0]))
+      }
+    }
+     return keys
+  }
+
+  getValues(){
+    let values = []
+    for (let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        this.keyMap[i].forEach(ar => values.push(ar[1]))
+      }
+    }
+    return values
+  }
+
 }
 
 const hashNew = new Hashtable(5)
@@ -39,9 +59,15 @@ hashNew.set("drink", "whiskey")
 hashNew.set("sport", "volleyball")
 hashNew.set("food", "lasagna")
 console.log(hashNew)
-console.log("-______")
+console.log("______")
 console.log(hashNew.get("color"))
 console.log(hashNew.get("alex"))
+console.log("______")
+console.log(hashNew.getKeys())
+console.log(hashNew.getValues())
+
+
+
 
 
 
